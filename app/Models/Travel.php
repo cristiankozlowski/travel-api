@@ -25,7 +25,7 @@ class Travel extends Model
 
     public function tours(): HasMany
     {
-        return $this->hasMany(Tour:class);
+        return $this->hasMany(Tour::class);
     }
 
     public function sluggable(): array
