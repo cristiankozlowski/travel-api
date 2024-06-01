@@ -1,0 +1,281 @@
+name: 'Admin endpoints'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/travels
+    metadata:
+      groupName: 'Admin endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST Travel'
+      description: 'Creates a new Travel record.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      is_public:
+        name: is_public
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: true
+        example: ipsum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      number_of_days:
+        name: number_of_days
+        description: ''
+        required: true
+        example: 20
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      is_public: false
+      name: ipsum
+      description: non
+      number_of_days: 20
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"996a36ca-2693-4901-9c55-7136e68d81d5","name":"My new travel 234","slug":"my-new-travel-234", ...}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name has already been taken.","errors":{"name":["The name has already been taken."]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer cfPhvaEb6a314eV6D8gkdZ5'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/admin/travels/{travel_id}/tours'
+    metadata:
+      groupName: 'Admin endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST Tour'
+      description: 'Creates a new Tour record.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      travel_id:
+        name: travel_id
+        description: 'The ID of the travel.'
+        required: true
+        example: 9b4e0362-4145-40cc-8b14-176e28625c34
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      travel_id: 9b4e0362-4145-40cc-8b14-176e28625c34
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: nesciunt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      starting_date:
+        name: starting_date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-06-01T15:11:17'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ending_date:
+        name: ending_date
+        description: 'Must be a valid date. Must be a date after <code>starting_date</code>.'
+        required: true
+        example: '2061-05-20'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: 338538408.368
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: nesciunt
+      starting_date: '2024-06-01T15:11:17'
+      ending_date: '2061-05-20'
+      price: 338538408.368
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"996a381e-64ca-46ba-8b51-f8279d5529ad","name":"Tour 1","starting_date":"2023-06-15","ending_date":"2023-06-20","price":"99.99"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name has already been taken.","errors":{"name":["The name has already been taken."]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer b1ZE8gPa646akDf5Vedhv3c'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/admin/travels/{travel_id}'
+    metadata:
+      groupName: 'Admin endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PUT Travel'
+      description: 'Updates new Travel record.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      travel_id:
+        name: travel_id
+        description: 'The ID of the travel.'
+        required: true
+        example: 9b4e0362-4145-40cc-8b14-176e28625c34
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      travel_id: 9b4e0362-4145-40cc-8b14-176e28625c34
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      is_public:
+        name: is_public
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: true
+        example: enim
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: nesciunt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      number_of_days:
+        name: number_of_days
+        description: ''
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      is_public: false
+      name: enim
+      description: nesciunt
+      number_of_days: 5
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"996a36ca-2693-4901-9c55-7136e68d81d5","name":"My new travel 234", ...}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{"message":"The name has already been taken.","errors":{"name":["The name has already been taken."]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z4ved6h1cfak53P8DVa6bEg'
+    controller: null
+    method: null
+    route: null
+    custom: []
