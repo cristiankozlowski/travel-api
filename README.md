@@ -60,3 +60,5 @@ At the end, the project should have:
 - Usage of *php-cs-fixer* and *larastan* are a plus;
 - Creating docs is **big plus**;
 - Feature tests are a **big big plus**.
+
+  ![travelapi_print](https://github.com/cristiankozlowski/travel-api/assets/26977328/c8165d6c-323f-4fae-814d-4bf7cf1cc9a8)
